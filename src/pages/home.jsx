@@ -1,3 +1,9 @@
+import SleepTracker from "../components/sleep-tracker";
+
 export default function Home() {
-  return <main>home</main>;
+  return (
+    <main>
+      <SleepTracker />
+    </main>
+  );
 }

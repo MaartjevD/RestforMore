@@ -1,3 +1,3 @@
 export default function Sleep() {
-  return <main>Sleep</main>;
+  return <main></main>;
 }
