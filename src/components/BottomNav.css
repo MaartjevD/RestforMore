@@ -1,0 +1,26 @@
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 430px;
+  height: 72px;
+  padding: 0 16px 16px 16px;
+
+  background: #fffdf7;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: 100;
+}
+
+.bottom-nav__item {
+  color: #5a4218;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
