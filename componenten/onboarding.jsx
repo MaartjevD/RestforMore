@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../style.css";
+import "../onboarding.css";
 
 function Onboarding({ setBedtijd }) {
   const [tijd, setTijd] = useState("");
