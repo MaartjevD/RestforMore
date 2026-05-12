@@ -1,0 +1,123 @@
+.sleep-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.sleep-card {
+  background: #f8f7f3;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 390px;
+  padding: 18px 10px;
+}
+
+.sleep-title {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #4a3f39;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mood-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 15px;
+}
+
+.mood-button {
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 20%;
+  padding: 0;
+}
+
+.mood-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.mood-circle.active {
+  transform: scale(1.08);
+}
+
+.mood-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.mood-label {
+  margin-top: 8px;
+  color: #5c514a;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+  .mood-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .mood-icon {
+    width: 31px;
+    height: 31px;
+  }
+
+  .mood-label {
+    font-size: 11px;
+  }
+}
+
+.sleep-message {
+  margin-top: 22px;
+  text-align: center;
+  color: #5c514a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.sleep-success {
+  text-align: center;
+  padding: 13px 10px;
+}
+
+.sleep-success h2 {
+  color: #4a3f39;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.sleep-success p {
+  color: #5c514a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.selected-mood-preview {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #5c514a;
+  font-size: 14px;
+}
+
+.selected-mood-icon {
+  width: 45px;
+  height: 45px;
+}
