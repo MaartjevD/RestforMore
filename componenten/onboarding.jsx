@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style.css";
 
-function Onboarding() {
+function Onboarding({ setBedtijd }) {
+  const [tijd, setTijd] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setBedtijd(tijd);
+  };
   return (
     <div className="pagina">
-      <form className="formulier">
+      <form className="formulier" onSubmit={handleSubmit}>
         <div className="veld">
           <label>Gebruikersnaam</label>
           <input type="text" placeholder="Voer je gebruikersnaam in" />
@@ -26,7 +32,11 @@ function Onboarding() {
 
         <div className="veld">
           <label>Gewenste wektijd</label>
-          <input type="time" />
+          <input
+            type="time"
+            value={tijd}
+            onChange={(e) => setTijd(e.target.value)}
+          />
         </div>
 
         <button type="submit" className="button">
