@@ -1,3 +1,9 @@
+import SleepNotification from "../components/bedtime-notification";
+
 export default function Home() {
-  return <main>home</main>;
+  return (
+    <main>
+      <SleepNotification />
+    </main>
+  );
 }
