@@ -1,5 +1,5 @@
 import React from "react";
-import "../style.css";
+import "../streak.css";
 import maan from "../public/maan-streaks.png";
 
 function Streak() {
