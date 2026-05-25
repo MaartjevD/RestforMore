@@ -1,11 +1,7 @@
-import SleepCard from "../educatie.jsx";
+import Avondroutine from "../Avondroutine";
 
 function App() {
-  return (
-    <div>
-      <SleepCard />
-    </div>
-  );
+  return <Avondroutine />;
 }
 
 export default App;
