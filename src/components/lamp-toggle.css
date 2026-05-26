@@ -1,0 +1,188 @@
+.lamp-container {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.lamp-card {
+  background: #f8f7f3;
+  border-radius: 28px;
+  min-height: 390px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lamp-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #cfcabe;
+  height: 200px;
+}
+
+.lamp-icon {
+  font-size: 74px;
+  opacity: 0.45;
+}
+
+.lamp-icon-on {
+  opacity: 1;
+  color: #e8b444;
+}
+
+.lamp-bulb {
+  line-height: 1;
+}
+
+.lamp-title {
+  margin-top: 28px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #cfcabe;
+}
+
+.lamp-title-on {
+  color: #cd9834;
+}
+
+.lamp-mode-text {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #cd9834;
+}
+
+.lamp-mode-bar {
+  background: #f8f7f3;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lamp-color-button {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-size: 32px;
+  color: #4a3f39;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lamp-color-button.selected {
+  outline: 5px solid #6d6254;
+  outline-offset: -5px;
+}
+
+.lamp-power-button {
+  margin-top: 24px;
+  width: 100%;
+  height: 76px;
+  border: none;
+  border-radius: 28px;
+  background: #efc84c;
+  color: #4a3f39;
+  font-size: 34px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 0 10px rgba(108, 108, 108, 0.12);
+}
+
+.lamp-power-off {
+  background: #e9e5dc;
+  font-size: 18px;
+}
+
+.power-icon {
+  font-size: 38px;
+}
+
+.lamp-card {
+  transition:
+    background-color 0.35s ease,
+    transform 0.25s ease;
+}
+
+.lamp-card-on {
+  background: #f7dfaa;
+}
+
+.lamp-icon {
+  width: 90px;
+  height: 90px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.lamp-icon-on {
+  transform: scale(1.08);
+}
+
+.lamp-title,
+.lamp-mode-text,
+.lamp-power-button {
+  transition: all 0.3s ease;
+}
+
+.lamp-mode-bar {
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lamp-card {
+  background: #f8f7f3;
+  border-radius: 28px;
+  min-height: 390px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(108, 108, 108, 0.12);
+  transition:
+    background-color 0.35s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.lamp-card-on {
+  box-shadow: 0 0 22px rgba(232, 180, 68, 0.22);
+}
+
+.check-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.turn-off-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.lamp-power-off .turn-off-icon {
+  width: 26px;
+  height: 26px;
+}

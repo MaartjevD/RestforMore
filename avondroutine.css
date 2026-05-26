@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eee8dd;
+  color: #050505;
+  font-size: 16px;
+}
+
+/* PAGE */
+.routine-page {
+  min-height: 100vh;
+  background: #eee8dd;
+  padding: 24px 16px;
+}
+
+/* CONTAINER */
+.routine-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* TYPO */
+h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 6px 0 20px;
+  font-size: 16px;
+}
+
+.next-step {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+/* BUTTON */
+.add-button {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: #dfc5a8;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+/* LIST */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* CARD */
+.step-card {
+  min-height: 76px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  background: #f0dfc9;
+  position: relative;
+  gap: 10px;
+}
+
+.step-card.done {
+  background: #d3e6cc;
+}
+
+.step-card.active {
+  background: #d9bc98;
+  border: 2px solid #000;
+}
+
+/* DRAG */
+.drag-handle {
+  font-size: 26px;
+  cursor: grab;
+  padding: 6px;
+  user-select: none;
+}
+
+/* ICON */
+.step-icon {
+  font-size: 28px;
+  width: auto;
+}
+
+/* INFO */
+.step-info {
+  flex: 1;
+}
+
+.step-info h2 {
+  margin: 0 0 2px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.step-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ACTIONS */
+.step-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.step-actions button {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* FORM */
+.new-step-box {
+  margin-top: 24px;
+  background: #dfc5a8;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.new-step-box h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.new-step-box input[type="text"] {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  padding: 0 12px;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+/* SLIDER */
+.new-step-box label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.slider-row input {
+  flex: 1;
+  accent-color: #76533b;
+}
+
+/* SUBMIT */
+.submit-button {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: #eee8dd;
+  color: #9a7052;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* DESKTOP UPGRADE */
+@media (min-width: 700px) {
+  .routine-container {
+    max-width: 553px;
+  }
+
+  .routine-page {
+    padding: 74px 30px;
+  }
+
+  .add-button {
+    width: 147px;
+    height: 32px;
+  }
+
+  .step-card {
+    min-height: 84px;
+    padding: 0 22px;
+  }
+
+  .step-info h2 {
+    font-size: 21px;
+  }
+
+  .step-info p {
+    font-size: 16px;
+  }
+}
