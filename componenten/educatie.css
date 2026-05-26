@@ -1,37 +1,46 @@
 .container {
-  background: #d9c3ad;
-  width: 500px;
-  height: 200px;
-
-  border-radius: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  bottom: 0px;
 }
 
 .sleepCard {
-  background: #d9c3ad;
-  border-radius: 20px;
-  padding: 20px;
+  background: #ebe4d2;
+  border-radius: 25px;
+
+  width: 100%;
+  max-width: 390px;
+
+  padding: 22px 32px;
+  box-sizing: border-box;
 }
 
 .sleepCard h2 {
   color: #7b5a43;
-  font-size: 22px;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
 }
 
 .sleepCard p {
   color: #7b5a43;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .leesMeer {
   border: none;
   background: none;
+
+  padding: 0;
+  margin-top: 10px;
+
   font-style: italic;
-  font-size: 20px;
+  font-size: 16px;
+
   cursor: pointer;
-  color: #6d6d6d;
+  color: #c89600;
 }
 
 /* popup */
@@ -45,6 +54,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 999;
 }
 
 .popup {
@@ -57,6 +68,8 @@
 .popupTop {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   padding: 12px 16px;
 
   border-bottom: 1px solid #d0c5b7;
@@ -80,7 +93,8 @@
 .popupContent p {
   color: #8a6649;
   margin-bottom: 20px;
-  line-height: 1.4;
+  line-height: 1.5;
+  font-size: 14px;
 }
 
 .afsluitBtn {
@@ -91,7 +105,7 @@
   background: #8a6649;
   color: white;
 
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 
   cursor: pointer;

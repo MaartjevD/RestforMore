@@ -8,23 +8,24 @@ export default function HomeHeader({ naam = "", bedtijd = "--:--" }) {
         <div className="avatar">
           {naam ? naam.charAt(0).toUpperCase() : "M"}
         </div>
+
         <div className="greeting-text">
-          <h2>Goedenavond, {naam || "Maartje"}</h2>
+          <h2>
+            Goedemorgen, <br /> {naam || "Maartje"}
+          </h2>
           <p>Jouw persoonlijke slaapcoach</p>
         </div>
-        <div className="demo-badge">DEMO</div>
       </div>
 
-      <div className="sleep-card">
+      <div className="bedtime-card">
         <div className="sleep-left">
-          <div className="small">VANAVOND SLAAP JE OM</div>
+          <div className="small">SLAAPTIJD</div>
           <div className="time">{bedtijd || "22:00"}</div>
         </div>
+
         <div className="sleep-right">
           <div className="connected">RESTNEST VERBONDEN</div>
-          <div className="reminder">
-            Herinnering om 21:15 — 45 minuten eerder
-          </div>
+          <div className="reminder">Herinnering om 21:15</div>
         </div>
       </div>
     </section>

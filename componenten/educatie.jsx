@@ -8,7 +8,7 @@ function SleepCard() {
     <div className="container">
       {/* kaart */}
       <div className="sleepCard">
-        <h2>Waarom mentale gezondheid belangrijk is...</h2>
+        <h2>Wist je dat...</h2>
 
         <p>
           Slaap reguleert je emoties en stresshormonen. Te weinig slaap verhoogt

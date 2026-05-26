@@ -9,11 +9,7 @@ export default function Home({ naam, bedtijd }) {
 
       <SleepTracker />
 
-      <section style={{ padding: "0 16px 24px 16px" }}>
-        <h3>Hoe heb je vannacht geslapen?</h3>
-        {/* reflectie wordt binnen SleepTracker afgehandeld; hier tonen we educatie */}
-        <SleepCard />
-      </section>
+      <SleepCard />
     </main>
   );
 }
