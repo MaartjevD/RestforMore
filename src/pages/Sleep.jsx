@@ -1,17 +1,7 @@
-// import LampToggle from "../components/lamp-toggle";
+import AlarmsList from "../components/AlarmsList";
 
-// export default function Sleep() {
-//   return (
-//     <main>
-//       <LampToggle />
-//     </main>
-//   );
-// }
-
-import WekkerComponent from "../components/WekkerComponent";
-
-function App() {
-  return <WekkerComponent />;
+function Sleep() {
+  return <AlarmsList />;
 }
 
-export default App;
+export default Sleep;
