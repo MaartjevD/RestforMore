@@ -31,7 +31,13 @@ const moods = [
 ];
 
 export default function SleepTracker() {
-  const [selectedMood, setSelectedMood] = useState("");
+  const [selectedMood, setSelectedMood] = useState(() => {
+    try {
+      return localStorage.getItem("sleepReflectie") || "";
+    } catch (e) {
+      return "";
+    }
+  });
 
   return (
     <div className="sleep-container">
@@ -45,7 +51,14 @@ export default function SleepTracker() {
                 <button
                   key={mood.label}
                   className="mood-button"
-                  onClick={() => setSelectedMood(mood.label)}
+                  onClick={() => {
+                    setSelectedMood(mood.label);
+                    try {
+                      localStorage.setItem("sleepReflectie", mood.label);
+                    } catch (e) {
+                      // ignore
+                    }
+                  }}
                 >
                   <div className="mood-circle">
                     <img

@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import "../onboarding.css";
 
-function Onboarding({ setBedtijd }) {
+function Onboarding({ onComplete }) {
   const [tijd, setTijd] = useState("");
+  const [naam, setNaam] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setBedtijd(tijd);
+    if (typeof onComplete === "function") {
+      onComplete({ naam, tijd });
+    }
   };
   return (
     <div className="pagina">
       <form className="formulier" onSubmit={handleSubmit}>
         <div className="veld">
           <label>Gebruikersnaam</label>
-          <input type="text" placeholder="Voer je gebruikersnaam in" />
+          <input
+            type="text"
+            placeholder="Voer je gebruikersnaam in"
+            value={naam}
+            onChange={(e) => setNaam(e.target.value)}
+          />
         </div>
 
         <div className="veld">
