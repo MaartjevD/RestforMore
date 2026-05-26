@@ -4,7 +4,7 @@ import Layout from "./components/Layout";
 import Onboarding from "./pages/onboarding-page";
 import Home from "./pages/home";
 import Sleep from "./pages/Sleep";
-import Progress from "./pages/progress";
+import Progress from "./pages/Progress";
 import Account from "./pages/account";
 
 function App() {
