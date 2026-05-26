@@ -1,122 +1,114 @@
 ﻿# Rest for More
 
+## Read me - RFM
+
 ## Project Overview
 
-`Rest for More` is a React single-page application built with Vite. The app tracks sleep, progress, onboarding and account screens using React Router. The project also includes PWA support via `vite-plugin-pwa`.
+Rest for More is a sleep tracking and wellness web application built with React and Vite. It allows users to monitor their sleep habits, track personal progress, complete an onboarding flow, and manage their account. The application is designed with a mobile-first approach and supports Progressive Web App (PWA) functionality, providing an app-like experience across devices.
 
----
+## Installation
 
-## Installatie
-
-1. Open een terminal in de projectmap:
-   ```bash
+1. Open a terminal in the project folder:
    cd "c:\Users\maart\OneDrive\Documenten\Semester 4 FED\project 2\RestforMore"
-   ```
-2. Installeer dependencies:
-   ```bash
+2. Install the dependencies:
    npm install
-   ```
-3. Start de ontwikkelserver:
-   ```bash
+3. Start the development server:
    npm run dev
-   ```
-4. Bouw voor productie:
-   ```bash
+4. Build for production:
    npm run build
-   ```
-5. Preview de productiebuild:
-   ```bash
+5. Preview the production build:
    npm run preview
-   ```
-
----
 
 ## Dependencies
 
-- `react` – UI library
-- `react-dom` – React rendering
-- `react-router-dom` – client-side routing
-- `lucide-react` – icon library
+• react – UI library
+• react-dom – React rendering
+• react-router-dom – Client-side routing
+• lucide-react – Icon library
 
-## DevDependencies
+## Dev Dependencies
 
-- `vite` – bundler en dev server
-- `@vitejs/plugin-react` – React integratie voor Vite
-- `vite-plugin-pwa` – PWA functionaliteit
-- `eslint` + `@eslint/js` – linting
-- `eslint-plugin-react-hooks` – React hooks lint regels
-- `eslint-plugin-react-refresh` – refresh linting
-- `globals` – globale variabelen definities
-- `@types/react` / `@types/react-dom` – TypeScript type definities voor React (IDE support)
-
----
+• vite – Bundler and development server
+• @vitejs/plugin-react – React integration for Vite
+• vite-plugin-pwa – PWA functionality
+• eslint + @eslint/js – Linting
+• eslint-plugin-react-hooks – React Hooks linting rules
+• eslint-plugin-react-refresh – Refresh linting
+• globals – Global variable definitions
+• @types/react / @types/react-dom – TypeScript type definitions for React (IDE support)
 
 ## Frameworks & Tools
 
-- `React` voor component gebaseerde UI
-- `Vite` als development server en bundler
-- `React Router` voor navigatie
-- `PWA` ondersteuning via `vite-plugin-pwa`
-- `ESLint` voor codekwaliteit
+• React for component-based UI
+• Vite as development server and bundler
+• React Router for navigation
+• vite-plugin-pwa for PWA support
+• ESLint for code quality
 
----
+## Project Structure
 
-## Projectstructuur
+• src/main.jsx – Entry point of the application
+• src/App.jsx – Main component containing the router and layout
+• src/components/ – Reusable UI components
+• src/pages/ – Page components for routes
+• src/styles/ – Global styles
+• src/assets/ – Static assets
+• public/ – Public files
 
-- `src/main.jsx` – entry point van de app
-- `src/App.jsx` – hoofdcomponent met router en layout
-- `src/components/` – herbruikbare UI-componenten
-- `src/pages/` – pagina componenten voor routes
-- `src/styles/` – globale styles
-- `src/assets/` – statische assets
-- `public/` – publieke bestanden
+## Features / Functionaliteiten
 
----
+• onboarding-pagina
+• Feature/alarmclock
+• Feature/avondroutine
+• Feature/bedtime-notification
+• Feature/lamp-toggle
+• Feature/pwa-setup
+• Feature/sleep-streaks
+• Feature/sleep-tracker
 
 ## Naming Conventions
 
-- Componentbestanden gebruiken `PascalCase`: `Layout.jsx`, `BottomNav.jsx`, `Sleep.jsx`
-- Pagina-bestanden gebruiken `PascalCase` of `kebab-case` in de importpaden; bij voorkeur `PascalCase` om consistent te blijven.
-- CSS-bestanden koppelen aan componenten en gebruiken meestal `kebab-case` of `PascalCase` met een duidelijke naam: `lamp-toggle.css`, `WekkerComponent.css`
-- React componentnamen in JSX en export moeten `PascalCase` zijn.
-- Bestandsnamen en mapnamen moeten beschrijven wat ze bevatten: `components`, `pages`, `styles`, `assets`.
+• Component files use PascalCase: Layout.jsx, BottomNav.jsx, Sleep.jsx
+• Page files should preferably use PascalCase for consistency
+• CSS files are linked to components and usually use kebab-case or PascalCase: lamp-toggle.css, WekkerComponent.css
+• React component names in JSX and exports should use PascalCase
+• File and folder names should clearly describe their contents: components, pages, styles, assets
 
----
+## Cloning the Project
 
-## Project overnemen
-
-1. Clone de repository:
-   ```bash
+1. Clone the repository:
    git clone <repository-url>
    cd RestforMore
-   ```
-2. Installeer dependencies met `npm install`
-3. Start de app met `npm run dev`
-4. Open `http://localhost:5173` in de browser
+2. Install the dependencies:
+   npm install
+3. Start the application:
+   npm run dev
+4. Open http://localhost:5173 in your browser.
 
-### Belangrijke punten om te begrijpen
+## Important Files and Structure
 
-- `src/App.jsx` definieert de routes en laadt de `Layout`-component.
-- `src/components/Layout.jsx` bevat de globale structuur, navigatie en pagina-wrapper.
-- `src/pages/` bevat de belangrijkste applicatiepagina's: `Home`, `Sleep`, `Progress`, `Account`, `Onboarding`.
-- `vite.config.js` bevat PWA configuratie en plugins.
+• src/App.jsx defines the routes and loads the Layout component
+• src/components/Layout.jsx contains the global structure, navigation, and page wrapper
+• src/pages/ contains the main application pages: Home, Sleep, Progress, Account, and Onboarding
+• vite.config.js contains the PWA configuration and plugins
 
-### Aanpassingen en uitbreidingen
+## Expanding the Project
 
-- Voeg nieuwe pagina's toe in `src/pages/` en registreer een route in `src/App.jsx`.
-- Voeg herbruikbare UI-elementen toe in `src/components/`.
-- Houd styling component-gebonden door CSS-bestanden naast de corresponderende componenten te plaatsen.
+• Add new pages in src/pages/ and register the route in src/App.jsx
+• Add reusable UI elements in src/components/
+• Keep styling component-based by placing CSS files next to their corresponding components
 
----
+## Extra Commands
 
-## Extra commands
+• npm run lint – Check the code with ESLint
 
-- `npm run lint` – controleer code met ESLint
+## Notes
 
----
+• This project uses React 19 and Vite 8
+• The application supports PWA functionality
+• Keep imports and component names consistent to improve collaboration within the team
 
-## Notities
+## Authors
 
-- Dit project gebruikt React 19 en Vite 8.
-- De app ondersteunt PWA-functionaliteit.
-- Houd imports en componentnamen consistent om samen met anderen soepel te kunnen werken.
+• Maartje van Duijnhoven
+• Sonya Khosravani
