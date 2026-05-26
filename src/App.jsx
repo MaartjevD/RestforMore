@@ -1,4 +1,4 @@
-import SleepCard from "../educatie.jsx";
+import SleepCard from "../componenten/educatie.jsx";
 
 function App() {
   return (
