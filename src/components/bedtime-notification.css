@@ -1,0 +1,88 @@
+.rfm-notification {
+  position: fixed;
+  top: 40px;
+  z-index: 9999;
+
+  height: 45px;
+  width: 393px;
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  background: rgba(255, 252, 238, 0.92);
+  border: 1px solid #fff9df;
+  border-radius: 23px;
+
+  box-shadow: 0 1px 2px rgba(199, 198, 198, 0.16);
+  backdrop-filter: blur(12px);
+
+  animation: notificationSlideDown 0.35s ease;
+}
+
+.rfm-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #7b5b3a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rfm-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.rfm-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #111;
+}
+
+.rfm-text strong {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.rfm-text span {
+  font-size: 18px;
+}
+
+.rfm-now {
+  align-self: flex-start;
+  font-size: 18px;
+  color: #8f8b84;
+}
+
+@keyframes notificationSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rfm-text strong {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #332008;
+}
+
+.rfm-text span {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding-top: 4px;
+  color: #6a614e;
+}
