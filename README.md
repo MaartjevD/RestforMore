@@ -1,25 +1,12 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Read me - RFM
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-Read me - RFM
-Project Overview
 Rest for More is a sleep tracking and wellness web application built with React and Vite. It allows users to monitor their sleep habits, track personal progress, complete an onboarding flow, and manage their account. The application is designed with a mobile-first approach and supports Progressive Web App (PWA) functionality, providing an app-like experience across devices.
 
-Installation
+## Installation
 
 1. Open a terminal in the project folder:
    cd "c:\Users\maart\OneDrive\Documenten\Semester 4 FED\project 2\RestforMore"
@@ -32,13 +19,15 @@ Installation
 5. Preview the production build:
    npm run preview
 
-Dependencies
+## Dependencies
+
 • react – UI library
 • react-dom – React rendering
 • react-router-dom – Client-side routing
 • lucide-react – Icon library
 
-Dev Dependencies
+## Dev Dependencies
+
 • vite – Bundler and development server
 • @vitejs/plugin-react – React integration for Vite
 • vite-plugin-pwa – PWA functionality
@@ -48,14 +37,16 @@ Dev Dependencies
 • globals – Global variable definitions
 • @types/react / @types/react-dom – TypeScript type definitions for React (IDE support)
 
-Frameworks & Tools
+## Frameworks & Tools
+
 • React for component-based UI
 • Vite as development server and bundler
 • React Router for navigation
 • vite-plugin-pwa for PWA support
 • ESLint for code quality
 
-Project Structure
+## Project Structure
+
 • src/main.jsx – Entry point of the application
 • src/App.jsx – Main component containing the router and layout
 • src/components/ – Reusable UI components
@@ -64,7 +55,8 @@ Project Structure
 • src/assets/ – Static assets
 • public/ – Public files
 
-Features / Functionaliteiten
+## Features / Functionaliteiten
+
 • onboarding-pagina
 • Feature/alarmclock
 • Feature/avondroutine
@@ -74,14 +66,15 @@ Features / Functionaliteiten
 • Feature/sleep-streaks
 • Feature/sleep-tracker
 
-Naming Conventions
+## Naming Conventions
+
 • Component files use PascalCase: Layout.jsx, BottomNav.jsx, Sleep.jsx
 • Page files should preferably use PascalCase for consistency
 • CSS files are linked to components and usually use kebab-case or PascalCase: lamp-toggle.css, WekkerComponent.css
 • React component names in JSX and exports should use PascalCase
 • File and folder names should clearly describe their contents: components, pages, styles, assets
 
-Cloning the Project
+## Cloning the Project
 
 1. Clone the repository:
    git clone <repository-url>
@@ -92,25 +85,30 @@ Cloning the Project
    npm run dev
 4. Open http://localhost:5173 in your browser.
 
-Important Files and Structure
+## Important Files and Structure
+
 • src/App.jsx defines the routes and loads the Layout component
 • src/components/Layout.jsx contains the global structure, navigation, and page wrapper
 • src/pages/ contains the main application pages: Home, Sleep, Progress, Account, and Onboarding
 • vite.config.js contains the PWA configuration and plugins
 
-Expanding the Project
+## Expanding the Project
+
 • Add new pages in src/pages/ and register the route in src/App.jsx
 • Add reusable UI elements in src/components/
 • Keep styling component-based by placing CSS files next to their corresponding components
 
-Extra Commands
+## Extra Commands
+
 • npm run lint – Check the code with ESLint
 
-Notes
+## Notes
+
 • This project uses React 19 and Vite 8
 • The application supports PWA functionality
 • Keep imports and component names consistent to improve collaboration within the team
 
-Authors
+## Authors
+
 • Maartje van Duijnhoven
 • Sonya Khosravani
