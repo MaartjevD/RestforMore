@@ -1,46 +1,75 @@
 .container {
   display: flex;
   justify-content: center;
-  bottom: 0px;
+  padding: 0 18px;
 }
 
 .sleepCard {
-  background: #ebe4d2;
-  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  column-gap: 22px;
 
   width: 100%;
   max-width: 390px;
 
-  padding: 22px 32px;
-  box-sizing: border-box;
+  margin-top: 65px;
+  margin-bottom: 100px;
+  padding: 25px 25px 25px;
+
+  border-radius: 30px;
+  background: rgba(255, 253, 248, 0.92);
+
+  box-shadow:
+    0 18px 45px rgba(126, 101, 61, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.sleepCard h2 {
-  color: #7b5a43;
-  font-size: 18px;
-  line-height: 1.4;
-  margin: 0 0 12px 0;
+.sleepIcon {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  color: #c69a23;
+  background: linear-gradient(145deg, #fff8df, #f3e3b9);
+
+  box-shadow:
+    0 12px 28px rgba(176, 135, 52, 0.12),
+    inset 0 1px 8px rgba(255, 255, 255, 0.9);
 }
 
-.sleepCard p {
-  color: #7b5a43;
-  font-size: 14px;
-  line-height: 1.5;
+.sleepText h2 {
+  margin: 0 0 14px;
+  color: #3f332c;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.sleepText p {
   margin: 0;
+  color: #6f6259;
+  font-size: 16px;
+  line-height: 1.3;
 }
 
 .leesMeer {
   border: none;
   background: none;
-
   padding: 0;
-  margin-top: 10px;
+  margin-top: 18px;
 
-  font-style: italic;
-  font-size: 16px;
-
+  color: #c69a23;
+  font-size: 20px;
+  font-weight: 500;
   cursor: pointer;
-  color: #c89600;
+}
+
+.leesMeer::after {
+  content: " →";
+  margin-left: 14px;
 }
 
 /* popup */
@@ -48,65 +77,60 @@
 .overlay {
   position: fixed;
   inset: 0;
-
-  background: rgba(0, 0, 0, 0.2);
-
+  background: rgba(40, 32, 24, 0.22);
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 999;
+  padding: 24px;
 }
 
 .popup {
-  width: 320px;
-  background: #ece6dd;
-  border-radius: 16px;
+  width: 100%;
+  max-width: 340px;
+  background: #fffdf8;
+  border-radius: 26px;
   overflow: hidden;
+  box-shadow: 0 24px 60px rgba(80, 60, 35, 0.22);
 }
 
 .popupTop {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 12px 16px;
-
-  border-bottom: 1px solid #d0c5b7;
-
-  color: #8a6649;
-  font-style: italic;
+  padding: 18px 22px;
+  color: #3f332c;
+  font-weight: 700;
+  border-bottom: 1px solid #efe5d4;
 }
 
 .closeBtn {
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 24px;
+  color: #7b6d60;
 }
 
 .popupContent {
   padding: 24px;
-  text-align: center;
 }
 
 .popupContent p {
-  color: #8a6649;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  font-size: 14px;
+  color: #6f6259;
+  margin: 0 0 18px;
+  line-height: 1.55;
+  font-size: 15px;
 }
 
 .afsluitBtn {
+  width: 100%;
   border: none;
-  padding: 12px 28px;
-  border-radius: 30px;
-
-  background: #8a6649;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: #c69a23;
   color: white;
-
   font-size: 16px;
-  font-weight: bold;
-
+  font-weight: 700;
   cursor: pointer;
 }

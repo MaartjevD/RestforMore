@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Lightbulb } from "lucide-react";
 import "./educatie.css";
 
 function SleepCard() {
@@ -6,21 +7,25 @@ function SleepCard() {
 
   return (
     <div className="container">
-      {/* kaart */}
       <div className="sleepCard">
-        <h2>Wist je dat...</h2>
+        <div className="sleepIcon">
+          <Lightbulb size={34} strokeWidth={2.1} />
+        </div>
 
-        <p>
-          Slaap reguleert je emoties en stresshormonen. Te weinig slaap verhoogt
-          het risico op depressie en angst met 60%.
-        </p>
+        <div className="sleepText">
+          <h2>Wist je dat...</h2>
 
-        <button className="leesMeer" onClick={() => setOpen(true)}>
-          Lees meer
-        </button>
+          <p>
+            Slaap reguleert je emoties en stresshormonen. Te weinig slaap
+            verhoogt het risico op depressie en angst met 60%.
+          </p>
+
+          <button className="leesMeer" onClick={() => setOpen(true)}>
+            Lees meer
+          </button>
+        </div>
       </div>
 
-      {/* popup */}
       {open && (
         <div className="overlay">
           <div className="popup">
@@ -28,7 +33,7 @@ function SleepCard() {
               <span>Wist je dat...</span>
 
               <button className="closeBtn" onClick={() => setOpen(false)}>
-                x
+                ×
               </button>
             </div>
 
@@ -40,9 +45,7 @@ function SleepCard() {
 
               <p>
                 Dat komt doordat je hersenen tijdens slaap emoties verwerken en
-                “afvlakken”. Bij slaaptekort blijft die verwerking onvolledig,
-                waardoor negatieve prikkels sterker binnenkomen en langer
-                blijven hangen.
+                afvlakken. Bij slaaptekort blijft die verwerking onvolledig.
               </p>
 
               <button className="afsluitBtn" onClick={() => setOpen(false)}>

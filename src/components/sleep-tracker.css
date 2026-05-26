@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px;
+  background: linear-gradient(180deg, rgba(255, 241, 216, 1), #f5f1e4);
 }
 
 .sleep-card {
-  background: #fffdf8;
+  background: #fffef9;
   border-radius: 25px;
   width: 100%;
   max-width: 390px;
@@ -57,6 +57,8 @@
 .mood-icon {
   width: 36px;
   height: 36px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 4px rgba(190, 160, 100, 0.164);
 }
 
 .mood-label {
