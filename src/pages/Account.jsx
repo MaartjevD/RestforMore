@@ -1,3 +1,9 @@
+import Streak from "../../componenten/streaks";
+
 export default function Account() {
-  return <main></main>;
+  return (
+    <main>
+      <Streak />
+    </main>
+  );
 }

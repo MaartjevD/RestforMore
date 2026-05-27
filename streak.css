@@ -1,62 +1,64 @@
 .streakKaart {
-  width: 950px;
+  width: 390px;
   background-color: #d8c2a8;
-  border-radius: 30px;
-  padding: 30px;
-  margin: 40px auto;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
 }
 
 .streakHeader {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .maan {
-  width: 90px;
-  height: 90px;
+  width: 55px;
+  height: 55px;
 }
 
 .titel {
-  font-size: 60px;
+  font-size: 32px;
   font-style: italic;
   font-weight: 300;
-  margin: 0 0 20px 0;
+  margin: 0 0 2px 0;
 }
 
 .streakInfo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   color: black;
+  flex-wrap: wrap;
 }
 
 .dagen {
-  font-size: 32px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .record {
-  font-size: 32px;
+  font-size: 18px;
   color: gray;
 }
 
 .containerDagen {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 25px;
+  gap: 5px;
 }
 
 .Cirkel {
-  width: 95px;
-  height: 95px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  margin-bottom: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  margin-bottom: 6px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .actief {
@@ -70,7 +72,8 @@
 }
 
 .weekdagen p {
-  font-size: 22px;
+  font-size: 14px;
   margin: 0;
   color: black;
+  text-align: center;
 }
