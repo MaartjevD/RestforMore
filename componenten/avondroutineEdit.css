@@ -1,0 +1,139 @@
+.homeRoutineCard {
+  width: 100%;
+  max-width: 390px;
+
+  margin: 28px auto 100px;
+  padding: 22px;
+
+  border-radius: 28px;
+  background: #fffefa;
+
+  box-shadow:
+    0 14px 35px rgba(121, 96, 60, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.homeRoutineTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.homeRoutineIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+
+  display: grid;
+  place-items: center;
+
+  color: #d7ad28;
+  background: linear-gradient(145deg, #fff8d8, #f8edc8);
+
+  box-shadow:
+    0 10px 24px rgba(201, 165, 90, 0.16),
+    inset 0 1px 5px rgba(255, 255, 255, 0.95);
+}
+
+.homeRoutineTop h2 {
+  margin: 0;
+
+  color: #25211d;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.homeRoutineTop p {
+  margin: 5px 0 0;
+
+  color: #8b8176;
+  font-size: 14px;
+}
+
+.homeRoutineList {
+  margin-top: 20px;
+
+  display: grid;
+  gap: 10px;
+}
+
+.emptyRoutine {
+  margin: 0;
+  padding: 16px;
+
+  border-radius: 18px;
+  background: #f8f4e9;
+
+  color: #8b8176;
+  font-size: 14px;
+  text-align: center;
+}
+
+.homeRoutineStep {
+  width: 100%;
+  min-height: 54px;
+
+  border: none;
+  border-radius: 18px;
+
+  display: grid;
+  grid-template-columns: 26px 30px 1fr;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px;
+
+  background: #f8f4e9;
+  color: #302a24;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    background 0.15s ease;
+}
+
+.homeRoutineStep:active {
+  transform: scale(0.98);
+}
+
+.homeCheckCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: #fffefa;
+  border: 2px solid #e6d9b7;
+  color: #5d4513;
+}
+
+.homeStepNumber {
+  color: #c89b22;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.homeStepText {
+  color: #302a24;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.homeRoutineStep.done {
+  opacity: 0.62;
+}
+
+.homeRoutineStep.done .homeCheckCircle {
+  background: #f3d466;
+  border-color: #f3d466;
+}
+
+.homeRoutineStep.done .homeStepText {
+  text-decoration: line-through;
+}

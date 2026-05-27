@@ -1,207 +1,108 @@
-import React, { useState } from "react";
-import "./Avondroutine.css";
+import { useEffect, useState } from "react";
+import { Moon, Plus, Trash2, Check } from "lucide-react";
+import "./avondroutine.css";
 
-const initialSteps = [
-  {
-    id: 1,
-    title: "Warme douche",
-    time: "21:20",
-    duration: 10,
-    icon: "🛁",
-    status: "done",
-  },
-  {
-    id: 2,
-    title: "Lezen",
-    time: "21:30",
-    duration: 15,
-    icon: "📖",
-    status: "active",
-  },
-  {
-    id: 3,
-    title: "Ademhalingsoefening",
-    time: "21:45",
-    duration: 10,
-    icon: "🧘",
-    status: "normal",
-  },
-  {
-    id: 4,
-    title: "Tanden poetsen & lichten dimmen",
-    time: "21:55",
-    duration: 5,
-    icon: "💡",
-    status: "normal",
-  },
-];
+export default function AvondroutineEditor() {
+  const [routine, setRoutine] = useState([
+    "Telefoon wegleggen",
+    "Tanden poetsen",
+    "Rustige verlichting aan",
+  ]);
 
-export default function Avondroutine() {
-  const [steps, setSteps] = useState(initialSteps);
-  const [showForm, setShowForm] = useState(false);
-  const [newTitle, setNewTitle] = useState("");
-  const [newDuration, setNewDuration] = useState(10);
-  const [editingId, setEditingId] = useState(null);
-  const [draggedIndex, setDraggedIndex] = useState(null);
+  const [newStep, setNewStep] = useState("");
+  const [saved, setSaved] = useState(false);
 
-  const totalDuration = steps.reduce((sum, step) => sum + step.duration, 0);
-  const nextStep = steps.find((step) => step.status === "normal") || steps[0];
+  useEffect(() => {
+    const savedRoutine = JSON.parse(localStorage.getItem("avondRoutine"));
 
-  function handleDelete(id) {
-    setSteps((current) => current.filter((step) => step.id !== id));
-  }
-
-  function handleEdit(id) {
-    const step = steps.find((item) => item.id === id);
-    if (!step) return;
-
-    setEditingId(id);
-    setNewTitle(step.title);
-    setNewDuration(step.duration);
-    setShowForm(true);
-  }
-
-  function handleSubmit() {
-    if (!newTitle.trim()) return;
-
-    if (editingId) {
-      setSteps((current) =>
-        current.map((step) =>
-          step.id === editingId
-            ? {
-                ...step,
-                title: newTitle,
-                duration: Number(newDuration),
-              }
-            : step,
-        ),
-      );
-    } else {
-      const newStep = {
-        id: Date.now(),
-        title: newTitle,
-        time: "22:00",
-        duration: Number(newDuration),
-        icon: "✍️",
-        status: "normal",
-      };
-
-      setSteps((current) => [...current, newStep]);
+    if (savedRoutine && savedRoutine.length > 0) {
+      setRoutine(savedRoutine);
     }
+  }, []);
 
-    setNewTitle("");
-    setNewDuration(10);
-    setEditingId(null);
-    setShowForm(false);
-  }
+  const addStep = () => {
+    const cleanStep = newStep.trim();
 
-  function handleDragStart(index) {
-    setDraggedIndex(index);
-  }
+    if (!cleanStep) return;
+    if (cleanStep.length > 32) return;
+    if (routine.includes(cleanStep)) return;
 
-  function handleDrop(dropIndex) {
-    if (draggedIndex === null) return;
+    setRoutine([...routine, cleanStep]);
+    setNewStep("");
+    setSaved(false);
+  };
 
-    const updatedSteps = [...steps];
-    const draggedItem = updatedSteps.splice(draggedIndex, 1)[0];
+  const removeStep = (index) => {
+    setRoutine(routine.filter((_, itemIndex) => itemIndex !== index));
+    setSaved(false);
+  };
 
-    updatedSteps.splice(dropIndex, 0, draggedItem);
-
-    setSteps(updatedSteps);
-    setDraggedIndex(null);
-  }
+  const saveRoutine = () => {
+    localStorage.setItem("avondRoutine", JSON.stringify(routine));
+    setSaved(true);
+  };
 
   return (
-    <main className="routine-page">
-      <section className="routine-container">
-        <h1>Avondroutine</h1>
+    <section className="editorPage">
+      <div className="editorCard">
+        <div className="editorHeader">
+          <div className="editorIcon">
+            <Moon size={24} />
+          </div>
 
-        <p className="subtitle">
-          {steps.length} stappen - {totalDuration} min totaal
-        </p>
+          <div>
+            <h1>Avondroutine</h1>
+            <p>Maak een vaste volgorde voor je avond.</p>
+          </div>
+        </div>
 
-        <p className="next-step">
-          <strong>Volgende stap:</strong> {nextStep?.title}
-        </p>
+        <div className="editorList">
+          {routine.map((step, index) => (
+            <div className="editorItem" key={`${step}-${index}`}>
+              <div className="editorNumber">{index + 1}</div>
 
-        <button
-          type="button"
-          className="add-button"
-          onClick={() => setShowForm((current) => !current)}
-        >
-          Toevoegen
-        </button>
+              <span>{step}</span>
 
-        <div className="steps-list">
-          {steps.map((step, index) => (
-            <div
-              key={step.id}
-              className={`step-card ${step.status}`}
-              draggable
-              onDragStart={() => handleDragStart(index)}
-              onDragOver={(event) => event.preventDefault()}
-              onDrop={() => handleDrop(index)}
-            >
-              <div className="drag-handle">⠿</div>
-
-              <div className="step-icon">{step.icon}</div>
-
-              <div className="step-info">
-                <h2>{step.title}</h2>
-                <p>
-                  {step.time} | {step.duration} min
-                </p>
-              </div>
-
-              <div className="step-actions">
-                <button type="button" onClick={() => handleDelete(step.id)}>
-                  ⌫
-                </button>
-
-                <button type="button" onClick={() => handleEdit(step.id)}>
-                  ✎
-                </button>
-              </div>
+              <button
+                className="deleteStepBtn"
+                onClick={() => removeStep(index)}
+                aria-label={`${step} verwijderen`}
+              >
+                <Trash2 size={18} />
+              </button>
             </div>
           ))}
         </div>
 
-        {showForm && (
-          <div className="new-step-box">
-            <h2>{editingId ? "Stap aanpassen" : "Nieuwe stap"}</h2>
+        <div className="addStepBox">
+          <input
+            value={newStep}
+            onChange={(e) => setNewStep(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && addStep()}
+            maxLength={32}
+            placeholder="Bijv. boek lezen"
+          />
 
-            <input
-              type="text"
-              placeholder="Bijv. dagboek schrijven"
-              value={newTitle}
-              onChange={(event) => setNewTitle(event.target.value)}
-            />
+          <button onClick={addStep} aria-label="Stap toevoegen">
+            <Plus size={22} />
+          </button>
+        </div>
 
-            <label>Duur</label>
+        <button
+          className="saveRoutineButton"
+          onClick={saveRoutine}
+          disabled={routine.length === 0}
+        >
+          <Check size={20} />
+          Routine opslaan
+        </button>
 
-            <div className="slider-row">
-              <input
-                type="range"
-                min="5"
-                max="60"
-                step="5"
-                value={newDuration}
-                onChange={(event) => setNewDuration(event.target.value)}
-              />
-
-              <span>{newDuration} min</span>
-            </div>
-
-            <button
-              type="button"
-              className="submit-button"
-              onClick={handleSubmit}
-            >
-              {editingId ? "Stap wijzigen" : "Stap toevoegen"}
-            </button>
-          </div>
+        {saved && (
+          <p className="savedText">
+            Je avondroutine is opgeslagen en staat op je home scherm.
+          </p>
         )}
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
