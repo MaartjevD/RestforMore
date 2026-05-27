@@ -1,11 +1,15 @@
 .quick-access-page {
   width: 100%;
   max-width: 430px;
+  min-height: 100vh;
 
   margin: 0 auto;
-  padding: 58px 22px 120px;
 
   box-sizing: border-box;
+}
+
+.quick-access-header {
+  padding: 58px 22px 120px;
 }
 
 .quick-access-page h1 {
@@ -120,4 +124,8 @@
   opacity: 0.9;
 
   flex-shrink: 0;
+}
+
+.bottom-wave {
+  transform: translateY(100px);
 }

@@ -1,188 +1,296 @@
-.lamp-container {
-  width: 100%;
-  max-width: 380px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.lamp-card {
-  background: #f8f7f3;
-  border-radius: 28px;
-  min-height: 390px;
+.lamp-page {
+  min-height: 100vh;
+  position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: #f4f0e4;
 }
 
-.lamp-content {
-  flex: 1;
+.lamp-close {
+  position: absolute;
+  top: 34px;
+  left: 28px;
+  z-index: 5;
+
+  border: none;
+  background: transparent;
+  color: #6e541f;
+  cursor: pointer;
+}
+
+.lamp-hero {
+  height: 342px;
+
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 238, 154, 0.55),
+      transparent 42%
+    ),
+    linear-gradient(180deg, #fbf7e8 0%, #f2eddf 100%);
+}
+
+.lamp-page.off .lamp-hero {
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(255, 255, 255, 0.4),
+      transparent 42%
+    ),
+    linear-gradient(180deg, #f3efe4 0%, #eee9dd 100%);
+}
+
+.restnest-image {
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 18px 18px rgba(112, 87, 46, 0.18));
+}
+
+/* eigen css per afbeelding */
+.restnest-moon {
+  width: 350px;
+  transform: translateY(38px);
+}
+
+.restnest-vanilla {
+  width: 356px;
+  transform: translateY(38px);
+}
+
+.restnest-sunset {
+  width: 350px;
+  transform: translateY(38px);
+}
+
+.restnest-cozy {
+  width: 352px;
+  transform: translateY(38px);
+}
+
+.restnest-off {
+  width: 332px;
+  transform: translateY(38px);
+}
+
+.lamp-panel {
+  position: relative;
+  z-index: 1;
+
+  min-height: calc(100vh - 300px);
+
+  padding: 78px 34px 120px;
+
+  background: #fffefa;
+  border-radius: 30px 30px 0 0;
+
+  box-shadow:
+    0 -14px 36px rgba(116, 92, 56, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.lamp-control-row {
+  display: grid;
+  grid-template-columns: 124px 1fr;
+  gap: 26px;
   align-items: center;
-  color: #cfcabe;
-  height: 200px;
 }
 
-.lamp-icon {
-  font-size: 74px;
-  opacity: 0.45;
+.selected-color-preview {
+  width: 124px;
+  height: 124px;
+  border-radius: 16px;
+
+  box-shadow:
+    0 12px 24px rgba(128, 104, 62, 0.12),
+    inset 0 1px 6px rgba(255, 255, 255, 0.75);
 }
 
-.lamp-icon-on {
-  opacity: 1;
-  color: #e8b444;
+.lamp-info h2 {
+  margin: 0 0 14px;
+  color: #40362e;
+  font-size: 22px;
+  font-weight: 800;
 }
 
-.lamp-bulb {
-  line-height: 1;
+.lamp-info p {
+  margin: 0 0 10px;
+  color: #9d9387;
+  font-size: 16px;
 }
 
-.lamp-title {
-  margin-top: 28px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #cfcabe;
+/* jouw stijl helderheid slider */
+.brightness-control {
+  position: relative;
+  width: 100%;
+  height: 54px;
 }
 
-.lamp-title-on {
-  color: #cd9834;
+.brightness-control input {
+  position: absolute;
+  left: 0;
+  top: 10px;
+
+  width: 100%;
+  height: 18px;
+
+  opacity: 0;
+  cursor: pointer;
+  z-index: 4;
 }
 
-.lamp-mode-text {
-  margin-top: 12px;
-  font-size: 18px;
-  color: #cd9834;
+.brightness-control::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18px;
+
+  height: 2px;
+  background: #aaa39a;
 }
 
-.lamp-mode-bar {
-  background: #f8f7f3;
-  padding: 22px 28px;
+.brightness-marks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 14px;
+
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.lamp-color-button {
-  width: 58px;
-  height: 58px;
+.brightness-marks span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8f8a83;
+}
+
+.brightness-dot.active {
+  position: absolute;
+  top: 7px;
+
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+
+  background: #efc243;
+  border: 3px solid #fffefa;
+
+  box-shadow:
+    0 0 0 2px #999188,
+    0 6px 10px rgba(126, 101, 61, 0.18);
+
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.brightness-labels {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #a69b8d;
+  font-size: 14px;
+}
+
+.color-section-lamp {
+  margin-top: 48px;
+}
+
+.color-section-lamp p {
+  margin: 0 0 16px;
+  color: #9b9186;
+  font-size: 19px;
+}
+
+.color-options {
+  display: flex;
+  gap: 26px;
+}
+
+.color-option {
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+
+  color: #8b8176;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.color-square {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 20px rgba(128, 104, 62, 0.12),
+    inset 0 1px 5px rgba(255, 255, 255, 0.75);
+}
+
+.lamp-status-row {
+  margin-top: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lamp-status-row.off-layout {
+  margin-top: 0;
+}
+
+.lamp-status-row h3 {
+  margin: 0 0 8px;
+  color: #3f352d;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.lamp-status-row p {
+  margin: 0;
+  color: #9b9186;
+  font-size: 18px;
+}
+
+.power-button {
+  width: 66px;
+  height: 66px;
+
   border-radius: 50%;
   border: none;
+
+  display: grid;
+  place-items: center;
+
+  color: #6f511c;
+  background: #f3efe3;
+
+  box-shadow:
+    0 8px 18px rgba(100, 80, 45, 0.18),
+    inset 0 1px 4px rgba(255, 255, 255, 0.9);
+
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  font-size: 32px;
-  color: #4a3f39;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.lamp-color-button.selected {
-  outline: 5px solid #6d6254;
-  outline-offset: -5px;
+.power-button.active,
+.lamp-page.off .power-button {
+  background: #f5cd5f;
 }
 
-.lamp-power-button {
-  margin-top: 24px;
-  width: 100%;
-  height: 76px;
-  border: none;
-  border-radius: 28px;
-  background: #efc84c;
-  color: #4a3f39;
-  font-size: 34px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  box-shadow: 0 0 10px rgba(108, 108, 108, 0.12);
-}
-
-.lamp-power-off {
-  background: #e9e5dc;
-  font-size: 18px;
-}
-
-.power-icon {
-  font-size: 38px;
-}
-
-.lamp-card {
-  transition:
-    background-color 0.35s ease,
-    transform 0.25s ease;
-}
-
-.lamp-card-on {
-  background: #f7dfaa;
-}
-
-.lamp-icon {
-  width: 90px;
-  height: 90px;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-.lamp-icon-on {
-  transform: scale(1.08);
-}
-
-.lamp-title,
-.lamp-mode-text,
-.lamp-power-button {
-  transition: all 0.3s ease;
-}
-
-.lamp-mode-bar {
-  animation: slideUp 0.3s ease;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.lamp-card {
-  background: #f8f7f3;
-  border-radius: 28px;
-  min-height: 390px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 0 10px rgba(108, 108, 108, 0.12);
-  transition:
-    background-color 0.35s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.lamp-card-on {
-  box-shadow: 0 0 22px rgba(232, 180, 68, 0.22);
-}
-
-.check-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.turn-off-icon {
-  width: 34px;
-  height: 34px;
-}
-
-.lamp-power-off .turn-off-icon {
-  width: 26px;
-  height: 26px;
+.power-button:active {
+  transform: scale(0.94);
 }
