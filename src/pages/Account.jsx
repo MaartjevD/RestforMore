@@ -1,3 +1,9 @@
+import AccountComp from "../components/accountComp";
+
 export default function Account() {
-  return <main>Account</main>;
+  return (
+    <main>
+      <AccountComp />
+    </main>
+  );
 }

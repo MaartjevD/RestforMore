@@ -5,14 +5,38 @@ body {
   min-height: 100%;
   font-family: "Poppins", sans-serif;
   background: #e5d8c8;
+  overflow-x: hidden;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#root,
 .app-container {
   width: 100%;
   max-width: 430px;
-  min-height: 100vh;
-
-  margin: 0 auto;
-
+  max-height: 900px;
+  height: min(100vh, 900px);
+  margin: 0;
   background: #f5f1e4;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-content {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: calc(92px + env(safe-area-inset-bottom) + 16px);
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.page-content::-webkit-scrollbar {
+  display: none;
 }

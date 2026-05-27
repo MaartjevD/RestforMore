@@ -382,13 +382,6 @@ export default function WekkerComponent({
           </div>
         </div>
       </section>
-
-      <nav className="bottom-nav">
-        <Home size={32} />
-        <Moon size={34} />
-        <TrendingUp size={34} />
-        <User size={34} />
-      </nav>
     </div>
   );
 }

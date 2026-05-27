@@ -10,7 +10,7 @@ export default function QuickAccess({
   return (
     <section className="quick-access-page">
       <div className="quick-access-header">
-        <h1>Instellingen</h1>
+        <h1>Functies</h1>
 
         <div className="quick-access-list">
           {/* LAMP */}

@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  padding: 0 22px;
+  padding: 0 19px;
 }
 
 .sleepCard {
@@ -12,7 +12,7 @@
   width: 100%;
   max-width: 390px;
 
-  margin: 40px auto 100px;
+  margin: 90px auto 80px;
   padding: 22px;
 
   border-radius: 26px;

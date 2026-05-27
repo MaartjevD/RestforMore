@@ -1,6 +1,7 @@
 .alarms-page {
-  min-height: 100vh;
-  padding: 28px 24px 120px;
+  position: relative;
+  min-height: 600px;
+  padding: 28px 24px 140px;
   background: #f4f0e4;
   color: #3d3429;
 }
@@ -132,8 +133,8 @@
 }
 
 .add-alarm-button {
-  position: fixed;
-  bottom: 100px;
+  position: absolute;
+  bottom: calc(42px + env(safe-area-inset-bottom) + 16px);
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
@@ -148,6 +149,7 @@
   cursor: pointer;
   color: #3d3429;
   transition: all 0.2s ease;
+  z-index: 60;
 }
 
 .add-alarm-button:hover,

@@ -1,0 +1,149 @@
+.account-page {
+  padding: 24px 18px 210px;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.account-header {
+  margin-bottom: 18px;
+}
+
+.account-header h1 {
+  margin: 0 0 6px 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #2f2318;
+}
+
+.account-header .sub {
+  margin: 0;
+  color: #7f6b55;
+  font-size: 0.96rem;
+}
+
+.account-card {
+  background: linear-gradient(180deg, #fff9f0 0%, #fbf1e2 100%);
+  border-radius: 34px;
+  padding: 22px;
+  box-shadow:
+    0 22px 40px rgba(118, 84, 40, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.account-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: #fff5d7;
+  border: 1px solid #f3e1b5;
+  box-shadow: 0 8px 18px rgba(175, 126, 45, 0.14);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+
+.field-body {
+  flex: 1;
+}
+
+.field-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #352819;
+  margin-bottom: 10px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.field-value,
+.field-row input,
+.field-row button,
+.account-row input {
+  flex: 1;
+  border-radius: 22px;
+  background: #fff7ee;
+  border: 1px solid #f0e1c2;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #4d3d30;
+}
+
+.field-row button {
+  flex: none;
+  background: #dab661;
+  color: #3e2c1a;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  box-shadow: 0 8px 14px rgba(129, 95, 43, 0.18);
+}
+
+.account-row input {
+  outline: none;
+  min-height: 52px;
+}
+
+.account-row input:disabled {
+  color: #6e5c4d;
+  background: #fff7ee;
+}
+
+.actions {
+  margin-top: 8px;
+}
+
+.btn {
+  width: 100%;
+  background: #5e452f;
+  color: white;
+  border: none;
+  padding: 16px 18px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(81, 58, 31, 0.18);
+}
+
+.danger-zone {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(92px + env(safe-area-inset-bottom) + 16px);
+  width: 100%;
+  max-width: 430px;
+  padding: 0 18px;
+  box-sizing: border-box;
+  z-index: 900;
+}
+
+.delete {
+  display: block;
+  width: 100%;
+  background: #d64447;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 26px;
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 12px 28px rgba(175, 57, 59, 0.18);
+}
+
+@media (min-width: 700px) {
+  .account-page {
+    padding: 32px;
+  }
+}

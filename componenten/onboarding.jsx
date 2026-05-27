@@ -4,12 +4,24 @@ import "../onboarding.css";
 function Onboarding({ onComplete }) {
   const [tijd, setTijd] = useState("");
   const [naam, setNaam] = useState("");
+  const [leeftijd, setLeeftijd] = useState("");
+  const [gender, setGender] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    try {
+      localStorage.setItem("userNaam", naam || "");
+      localStorage.setItem("bedtijd", tijd || "");
+      localStorage.setItem("leeftijd", leeftijd || "");
+      localStorage.setItem("gender", gender || "");
+      localStorage.setItem("onboardingComplete", "true");
+    } catch (err) {
+      // ignore
+    }
+
     if (typeof onComplete === "function") {
-      onComplete({ naam, tijd });
+      onComplete({ naam, tijd, leeftijd, gender });
     }
   };
   return (
@@ -27,15 +39,31 @@ function Onboarding({ onComplete }) {
 
         <div className="veld">
           <label>Leeftijd</label>
-          <input type="number" placeholder="Bijv. 19" />
+          <input
+            type="number"
+            placeholder="Bijv. 19"
+            value={leeftijd}
+            onChange={(e) => setLeeftijd(e.target.value)}
+          />
         </div>
 
         <div className="veld">
           <label>Gender</label>
 
           <div className="veldIcon">
-            <input type="text" placeholder="Bijv. vrouw, man, anders" />
-            <span className="vraagteken">?</span>
+            <select
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+              className="genderSelect"
+            >
+              <option value="">Kies een optie</option>
+              <option value="vrouw">Vrouw</option>
+              <option value="man">Man</option>
+              <option value="non-binair">Non-binair</option>
+              <option value="geen van alle">Geen van alle</option>
+            </select>
+
+            <span className="dropdownArrow">⌄</span>
           </div>
         </div>
 

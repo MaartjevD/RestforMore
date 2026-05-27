@@ -13,14 +13,14 @@
 }
 
 .quick-access-page h1 {
-  margin: 0 0 34px;
+  margin: 0px 0px 34px 10px;
 
   font-size: 24px;
   line-height: 1.05;
 
   font-weight: 600;
 
-  letter-spacing: -1px;
+  letter-spacing: -0.4px;
 
   color: #2f241d;
 }
