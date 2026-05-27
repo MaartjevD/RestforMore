@@ -1,7 +1,9 @@
 body {
   margin: 0;
   background: #e5d8c8;
-  font-family: sans-serif;
+  body {
+    font-family: "Poppins", sans-serif;
+  }
 }
 
 .app-container {

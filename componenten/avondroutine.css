@@ -12,7 +12,7 @@
   margin: 0 auto;
   padding: 22px;
 
-  border-radius: 28px;
+  border-radius: 25px;
   background: #fffefa;
 
   box-shadow:
@@ -47,7 +47,7 @@
 
   color: #25211d;
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.5px;
 }
 
@@ -62,7 +62,7 @@
   margin-top: 24px;
 
   display: grid;
-  gap: 12px;
+  gap: 16px;
 }
 
 .editorItem {
@@ -71,31 +71,31 @@
   display: grid;
   grid-template-columns: 34px 1fr 40px;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 
   padding: 9px 10px;
 
-  border-radius: 18px;
-  background: #f8f4e9;
+  border-radius: 15px;
+  background: #f8f4e9b5;
 
-  color: #302a24;
-  font-size: 15px;
-  font-weight: 650;
+  color: #302a24be;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .editorNumber {
   width: 34px;
   height: 34px;
-  border-radius: 50%;
+  border-radius: 8px;
 
   display: grid;
   place-items: center;
 
-  background: #f3d466;
+  background: #f2e8be7e;
   color: #5d4513;
 
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .deleteStepBtn {
@@ -103,17 +103,15 @@
   height: 38px;
 
   border: none;
-  border-radius: 50%;
+  border-radius: 8px;
 
   display: grid;
   place-items: center;
 
-  background: #fffefa;
+  background: #fffdec00;
   color: #8a7440;
 
   cursor: pointer;
-
-  box-shadow: 0 4px 10px rgba(80, 60, 35, 0.08);
 }
 
 .deleteStepBtn:active {
@@ -121,23 +119,23 @@
 }
 
 .addStepBox {
-  margin-top: 18px;
+  margin-top: 34px;
 
   display: grid;
-  grid-template-columns: 1fr 52px;
+  grid-template-columns: 1fr 46px;
   gap: 10px;
 }
 
 .addStepBox input {
-  height: 52px;
+  height: 46px;
 
-  border: none;
+  border: 1px solid #7a65302f;
   outline: none;
-  border-radius: 999px;
+  border-radius: 8px;
 
   padding: 0 18px;
 
-  background: #f8f4e9;
+  background: #f8f4e922;
   color: #25211d;
 
   font-size: 15px;
@@ -149,7 +147,7 @@
 
 .addStepBox button {
   border: none;
-  border-radius: 18px;
+  border-radius: 8px;
 
   display: grid;
   place-items: center;
@@ -166,25 +164,25 @@
   width: 100%;
   height: 54px;
 
-  margin-top: 18px;
+  margin-top: 12px;
 
   border: none;
-  border-radius: 999px;
+  border-radius: 15px;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 
-  background: #ecd688;
+  background: #f3d466;
   color: #5d4513;
 
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
 
   cursor: pointer;
 
-  box-shadow: 0 10px 24px rgba(201, 165, 90, 0.22);
+  box-shadow: 1px 2px 4px rgba(201, 165, 90, 0.22);
 }
 
 .saveRoutineButton:disabled {
@@ -197,7 +195,7 @@
   padding: 12px 14px;
 
   border-radius: 16px;
-  background: #f8f4e9;
+  background: #f5f0e09e;
 
   color: #7a6530;
   font-size: 14px;
