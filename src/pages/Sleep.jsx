@@ -5,12 +5,15 @@ import LampToggle from "../components/lamp-toggle";
 import AlarmsList from "../components/AlarmsList";
 import WekkerComponent from "../components/WekkerComponent";
 import AlarmSound from "../components/AlarmSound";
+import Avondroutine from "../../componenten/avondroutine";
 
 function Sleep() {
   const [view, setView] = useState("quick-access");
 
   return (
     <>
+      {/* QUICK ACCESS */}
+
       {view === "quick-access" && (
         <QuickAccess
           onLampClick={() => setView("lamp")}
@@ -19,11 +22,17 @@ function Sleep() {
         />
       )}
 
+      {/* LAMP */}
+
       {view === "lamp" && <LampToggle />}
+
+      {/* ALARMS LIST */}
 
       {view === "alarms-list" && (
         <AlarmsList onAddAlarm={() => setView("wekker-component")} />
       )}
+
+      {/* WEKKER COMPONENT */}
 
       {view === "wekker-component" && (
         <WekkerComponent
@@ -33,9 +42,15 @@ function Sleep() {
         />
       )}
 
+      {/* ALARM SOUND */}
+
       {view === "alarm-sound" && (
         <AlarmSound onBack={() => setView("wekker-component")} />
       )}
+
+      {/* AVONDROUTINE */}
+
+      {view === "avondroutine" && <Avondroutine />}
     </>
   );
 }

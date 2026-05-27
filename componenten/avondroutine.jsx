@@ -45,28 +45,34 @@ export default function Avondroutine() {
   const [draggedIndex, setDraggedIndex] = useState(null);
 
   const totalDuration = steps.reduce((sum, step) => sum + step.duration, 0);
-  const nextStep = steps.find((s) => s.status === "normal") || steps[0];
+  const nextStep = steps.find((step) => step.status === "normal") || steps[0];
 
-  const handleDelete = (id) => {
-    setSteps(steps.filter((step) => step.id !== id));
-  };
+  function handleDelete(id) {
+    setSteps((current) => current.filter((step) => step.id !== id));
+  }
 
-  const handleEdit = (id) => {
-    const step = steps.find((s) => s.id === id);
+  function handleEdit(id) {
+    const step = steps.find((item) => item.id === id);
+    if (!step) return;
+
     setEditingId(id);
     setNewTitle(step.title);
     setNewDuration(step.duration);
     setShowForm(true);
-  };
+  }
 
-  const handleSubmit = () => {
+  function handleSubmit() {
     if (!newTitle.trim()) return;
 
     if (editingId) {
-      setSteps(
-        steps.map((step) =>
+      setSteps((current) =>
+        current.map((step) =>
           step.id === editingId
-            ? { ...step, title: newTitle, duration: Number(newDuration) }
+            ? {
+                ...step,
+                title: newTitle,
+                duration: Number(newDuration),
+              }
             : step,
         ),
       );
@@ -80,34 +86,36 @@ export default function Avondroutine() {
         status: "normal",
       };
 
-      setSteps([...steps, newStep]);
+      setSteps((current) => [...current, newStep]);
     }
 
     setNewTitle("");
     setNewDuration(10);
     setEditingId(null);
     setShowForm(false);
-  };
+  }
 
-  const handleDragStart = (index) => {
+  function handleDragStart(index) {
     setDraggedIndex(index);
-  };
+  }
 
-  const handleDrop = (dropIndex) => {
+  function handleDrop(dropIndex) {
     if (draggedIndex === null) return;
 
     const updatedSteps = [...steps];
     const draggedItem = updatedSteps.splice(draggedIndex, 1)[0];
+
     updatedSteps.splice(dropIndex, 0, draggedItem);
 
     setSteps(updatedSteps);
     setDraggedIndex(null);
-  };
+  }
 
   return (
     <main className="routine-page">
       <section className="routine-container">
         <h1>Avondroutine</h1>
+
         <p className="subtitle">
           {steps.length} stappen - {totalDuration} min totaal
         </p>
@@ -116,7 +124,11 @@ export default function Avondroutine() {
           <strong>Volgende stap:</strong> {nextStep?.title}
         </p>
 
-        <button className="add-button" onClick={() => setShowForm(!showForm)}>
+        <button
+          type="button"
+          className="add-button"
+          onClick={() => setShowForm((current) => !current)}
+        >
           Toevoegen
         </button>
 
@@ -127,7 +139,7 @@ export default function Avondroutine() {
               className={`step-card ${step.status}`}
               draggable
               onDragStart={() => handleDragStart(index)}
-              onDragOver={(e) => e.preventDefault()}
+              onDragOver={(event) => event.preventDefault()}
               onDrop={() => handleDrop(index)}
             >
               <div className="drag-handle">⠿</div>
@@ -142,8 +154,13 @@ export default function Avondroutine() {
               </div>
 
               <div className="step-actions">
-                <button onClick={() => handleDelete(step.id)}>⌫</button>
-                <button onClick={() => handleEdit(step.id)}>✎</button>
+                <button type="button" onClick={() => handleDelete(step.id)}>
+                  ⌫
+                </button>
+
+                <button type="button" onClick={() => handleEdit(step.id)}>
+                  ✎
+                </button>
               </div>
             </div>
           ))}
@@ -151,13 +168,13 @@ export default function Avondroutine() {
 
         {showForm && (
           <div className="new-step-box">
-            <h2>Nieuwe stap</h2>
+            <h2>{editingId ? "Stap aanpassen" : "Nieuwe stap"}</h2>
 
             <input
               type="text"
               placeholder="Bijv. dagboek schrijven"
               value={newTitle}
-              onChange={(e) => setNewTitle(e.target.value)}
+              onChange={(event) => setNewTitle(event.target.value)}
             />
 
             <label>Duur</label>
@@ -169,12 +186,17 @@ export default function Avondroutine() {
                 max="60"
                 step="5"
                 value={newDuration}
-                onChange={(e) => setNewDuration(e.target.value)}
+                onChange={(event) => setNewDuration(event.target.value)}
               />
+
               <span>{newDuration} min</span>
             </div>
 
-            <button className="submit-button" onClick={handleSubmit}>
+            <button
+              type="button"
+              className="submit-button"
+              onClick={handleSubmit}
+            >
               {editingId ? "Stap wijzigen" : "Stap toevoegen"}
             </button>
           </div>
