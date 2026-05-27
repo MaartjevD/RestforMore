@@ -2,47 +2,61 @@ import "./QuickAccess.css";
 
 import { Lightbulb, AlarmClock, Moon, ChevronRight } from "lucide-react";
 
-export default function QuickAccess() {
-  const items = [
-    {
-      title: "Lamp",
-      subtitle: "Pas je lichtkleur en helderheid aan",
-      icon: Lightbulb,
-    },
-
-    {
-      title: "Wekker",
-      subtitle: "Stel je wake-up ritme in",
-      icon: AlarmClock,
-    },
-
-    {
-      title: "Avondroutine",
-      subtitle: "Bereid je rustig voor op slaap",
-      icon: Moon,
-    },
-  ];
-
+export default function QuickAccess({
+  onLampClick,
+  onWekkerClick,
+  onAvondroutineClick,
+}) {
   return (
-    <section className="quick-access">
-      {items.map((item, index) => {
-        const Icon = item.icon;
+    <section className="quick-access-page">
+      <h1>Instellingen</h1>
 
-        return (
-          <button className="quick-card" key={index}>
-            <div className="quick-icon-wrap">
-              <Icon className="quick-icon" size={24} strokeWidth={2} />
-            </div>
+      <div className="quick-access-list">
+        {/* LAMP */}
 
-            <div className="quick-content">
-              <h3>{item.title}</h3>
-              <p>{item.subtitle}</p>
-            </div>
+        <button className="quick-card" onClick={onLampClick}>
+          <div className="quick-icon-wrap">
+            <Lightbulb className="quick-icon" size={32} strokeWidth={2.1} />
+          </div>
 
-            <ChevronRight className="quick-arrow" size={20} strokeWidth={2.4} />
-          </button>
-        );
-      })}
+          <div className="quick-content">
+            <h3>Lamp</h3>
+            <p>Beheer je lampinstellingen</p>
+          </div>
+
+          <ChevronRight className="quick-arrow" size={26} strokeWidth={2.3} />
+        </button>
+
+        {/* WEKKER */}
+
+        <button className="quick-card" onClick={onWekkerClick}>
+          <div className="quick-icon-wrap">
+            <AlarmClock className="quick-icon" size={32} strokeWidth={2.1} />
+          </div>
+
+          <div className="quick-content">
+            <h3>Wekker</h3>
+            <p>Beheer je wekkers</p>
+          </div>
+
+          <ChevronRight className="quick-arrow" size={26} strokeWidth={2.3} />
+        </button>
+
+        {/* AVONDROUTINE */}
+
+        <button className="quick-card" onClick={onAvondroutineClick}>
+          <div className="quick-icon-wrap">
+            <Moon className="quick-icon" size={32} strokeWidth={2.1} />
+          </div>
+
+          <div className="quick-content">
+            <h3>Avondroutine</h3>
+            <p>Stel je avondroutine in</p>
+          </div>
+
+          <ChevronRight className="quick-arrow" size={26} strokeWidth={2.3} />
+        </button>
+      </div>
     </section>
   );
 }

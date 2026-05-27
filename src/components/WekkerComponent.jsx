@@ -159,7 +159,11 @@ function Toggle({ active, onToggle, label }) {
   );
 }
 
-export default function WekkerComponent() {
+export default function WekkerComponent({
+  onCancel,
+  onSave,
+  onOpenAlarmSound,
+}) {
   const [wakeHour, setWakeHour] = useState(8);
   const [wakeMinute, setWakeMinute] = useState(0);
   const [soundType, setSoundType] = useState(() => {
@@ -226,7 +230,7 @@ export default function WekkerComponent() {
   }
 
   function goToAlarmSound() {
-    navigate("/alarm");
+    onOpenAlarmSound();
   }
 
   const hourOptions = getWheelOptions(wakeHour, 24);
@@ -235,11 +239,11 @@ export default function WekkerComponent() {
   return (
     <div className="wekker-page">
       <div className="top-buttons">
-        <button className="icon-button clear">
+        <button className="icon-button clear" onClick={onCancel}>
           <X size={30} />
         </button>
 
-        <button className="icon-button save">
+        <button className="icon-button save" onClick={onSave}>
           <Check size={28} />
         </button>
       </div>

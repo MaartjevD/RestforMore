@@ -1,40 +1,53 @@
-.quick-access {
+.quick-access-page {
   width: 100%;
-  max-width: 390px;
+  max-width: 430px;
 
-  margin: 60px auto 120px;
-  padding: 0 18px;
+  margin: 0 auto;
+  padding: 58px 22px 120px;
 
   box-sizing: border-box;
+}
 
+.quick-access-page h1 {
+  margin: 0 0 34px;
+
+  font-size: 24px;
+  line-height: 1.05;
+
+  font-weight: 600;
+
+  letter-spacing: -1px;
+
+  color: #2f241d;
+}
+
+.quick-access-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
 }
 
 .quick-card {
-  position: relative;
-
   width: 100%;
   border: none;
 
-  padding: 22px 22px;
+  padding: 20px 20px;
 
-  border-radius: 30px;
+  border-radius: 25px;
 
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.92),
-    rgba(255, 252, 247, 0.88)
+    rgba(255, 255, 255, 0.94),
+    rgba(255, 252, 247, 0.92)
   );
 
   box-shadow:
-    0 10px 35px rgba(140, 114, 72, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 4px 4px rgba(189, 153, 104, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
 
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
 
   text-align: left;
 
@@ -49,36 +62,33 @@
   transform: translateY(-4px);
 
   box-shadow:
-    0 18px 45px rgba(140, 114, 72, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    0 22px 48px rgba(121, 96, 60, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
-/* ICON */
-
 .quick-icon-wrap {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
 
-  border-radius: 18px;
+  border-radius: 16px;
 
   flex-shrink: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #f6ebca;
 
-  background: linear-gradient(145deg, #fff8e8, #f5e7be);
+  background: linear-gradient(145deg, #fff8e8, #f6ebca);
 
   box-shadow:
-    0 8px 24px rgba(203, 164, 86, 0.16),
-    inset 0 1px 4px rgba(255, 255, 255, 0.9);
+    0 2px 2px rgba(201, 165, 90, 0.14),
+    inset 0 1px 5px rgba(255, 255, 255, 0.95);
 }
 
 .quick-icon {
-  color: #c89b22;
+  color: #d4ab3b;
 }
-
-/* TEXT */
 
 .quick-content {
   flex: 1;
@@ -87,29 +97,25 @@
 .quick-content h3 {
   margin: 0;
 
-  font-size: 25px;
-  line-height: 1.1;
+  font-size: 20px;
+  line-height: 1.05;
 
-  font-weight: 700;
+  font-weight: 600;
 
-  color: #372c25;
-
-  letter-spacing: -0.5px;
+  color: #2f241d;
 }
 
 .quick-content p {
-  margin-top: 8px;
+  margin-top: 10px;
 
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.45;
 
-  color: #9b8d7e;
+  color: #8f8275;
 }
 
-/* ARROW */
-
 .quick-arrow {
-  color: #d1b26d;
+  color: #4e3e34;
 
   opacity: 0.9;
 

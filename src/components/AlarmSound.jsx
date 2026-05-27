@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Check } from "lucide-react";
 import "./AlarmSound.css";
 
@@ -21,32 +20,27 @@ const radioOptions = [
   "538",
 ];
 
-export default function AlarmSound() {
-  const getInitialMode = () => {
+export default function AlarmSound({ onBack }) {
+  const [mode, setMode] = useState(() => {
     if (typeof window === "undefined") return "ringtone";
     return localStorage.getItem("alarmSoundType") === "Radio"
       ? "radio"
       : "ringtone";
-  };
+  });
 
-  const getInitialRingtone = () => {
+  const [selectedRingtone, setSelectedRingtone] = useState(() => {
     if (typeof window === "undefined") return "Standaard";
     return localStorage.getItem("alarmSoundType") === "Ringtone"
       ? localStorage.getItem("alarmSoundValue") || "Standaard"
       : "Standaard";
-  };
+  });
 
-  const getInitialRadio = () => {
+  const [selectedRadio, setSelectedRadio] = useState(() => {
     if (typeof window === "undefined") return "NPO Radio 1";
     return localStorage.getItem("alarmSoundType") === "Radio"
       ? localStorage.getItem("alarmSoundValue") || "NPO Radio 1"
       : "NPO Radio 1";
-  };
-
-  const [mode, setMode] = useState(getInitialMode);
-  const [selectedRingtone, setSelectedRingtone] = useState(getInitialRingtone);
-  const [selectedRadio, setSelectedRadio] = useState(getInitialRadio);
-  const navigate = useNavigate();
+  });
 
   const currentOptions = mode === "ringtone" ? ringtoneOptions : radioOptions;
   const selectedOption = mode === "ringtone" ? selectedRingtone : selectedRadio;
@@ -70,11 +64,12 @@ export default function AlarmSound() {
         <button
           type="button"
           className="back-button"
-          onClick={() => navigate("/sleep")}
+          onClick={onBack}
           aria-label="Terug"
         >
           <ArrowLeft size={24} />
         </button>
+
         <h1>Alarm geluid</h1>
         <div className="alarm-header-spacer" />
       </div>
@@ -87,6 +82,7 @@ export default function AlarmSound() {
         >
           Ringtone
         </button>
+
         <button
           type="button"
           className={mode === "radio" ? "alarm-tab active" : "alarm-tab"}
@@ -103,15 +99,12 @@ export default function AlarmSound() {
             key={option}
             className={`alarm-item ${selectedOption === option ? "selected" : ""}`}
             onClick={() => {
-              if (mode === "ringtone") {
-                setSelectedRingtone(option);
-              } else {
-                setSelectedRadio(option);
-              }
+              if (mode === "ringtone") setSelectedRingtone(option);
+              else setSelectedRadio(option);
             }}
           >
             <span>{option}</span>
-            {selectedOption === option ? <Check size={18} /> : null}
+            {selectedOption === option && <Check size={18} />}
           </button>
         ))}
       </div>

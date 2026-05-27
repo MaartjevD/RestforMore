@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Sun, Moon, Plus } from "lucide-react";
 import "./AlarmsList.css";
 
-export default function AlarmsList() {
+export default function AlarmsList({ onAddAlarm }) {
   const [alarms, setAlarms] = useState([
     {
       id: 1,
@@ -69,7 +69,7 @@ export default function AlarmsList() {
                 <div className="alarm-meta">
                   <span>{alarm.ringtone}</span>
                   <span className="dot">•</span>
-                  <span>Lamp aan</span>
+                  <span>{alarm.lamp ? "Lamp aan" : "Lamp uit"}</span>
                 </div>
               </div>
             </div>
@@ -87,7 +87,12 @@ export default function AlarmsList() {
         ))}
       </div>
 
-      <button type="button" className="add-alarm-button" aria-label="Add new alarm">
+      <button
+        type="button"
+        className="add-alarm-button"
+        aria-label="Add new alarm"
+        onClick={onAddAlarm}
+      >
         <Plus size={32} />
       </button>
     </div>
