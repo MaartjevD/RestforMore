@@ -1,24 +1,45 @@
 import { Home, Moon, TrendingUp, User } from "lucide-react";
+
+import { useLocation } from "react-router-dom";
 import "./BottomNav.css";
 
 export default function BottomNav() {
+  const location = useLocation();
+
+  const navItems = [
+    {
+      icon: <Home size={24} strokeWidth={2.2} />,
+      path: "/",
+    },
+    {
+      icon: <Moon size={24} strokeWidth={2.2} />,
+      path: "/Sleep",
+    },
+    {
+      icon: <TrendingUp size={24} strokeWidth={2.2} />,
+      path: "/Progress",
+    },
+    {
+      icon: <User size={24} strokeWidth={2.2} />,
+      path: "/Account",
+    },
+  ];
+
   return (
-    <nav className="bottom-nav">
-      <a href="/" className="bottom-nav__item">
-        <Home size={28} />
-      </a>
+    <nav className="bottomNav">
+      {navItems.map((item) => {
+        const active = location.pathname === item.path;
 
-      <a href="/Sleep" className="bottom-nav__item">
-        <Moon size={28} />
-      </a>
-
-      <a href="/Progress" className="bottom-nav__item">
-        <TrendingUp size={28} />
-      </a>
-
-      <a href="/Account" className="bottom-nav__item">
-        <User size={28} />
-      </a>
+        return (
+          <a
+            key={item.path}
+            href={item.path}
+            className={`bottomNavItem ${active ? "active" : ""}`}
+          >
+            {item.icon}
+          </a>
+        );
+      })}
     </nav>
   );
 }

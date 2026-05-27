@@ -28,6 +28,7 @@
   place-items: center;
 
   color: #d7ad28;
+
   background: linear-gradient(145deg, #fff8d8, #f8edc8);
 
   box-shadow:
@@ -38,10 +39,10 @@
 .homeRoutineTop h2 {
   margin: 0;
 
-  color: #25211d;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  color: #2e261ed6;
+  font-size: 18.72px;
+  font-weight: 700;
+  letter-spacing: 0px;
 }
 
 .homeRoutineTop p {

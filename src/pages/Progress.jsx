@@ -14,9 +14,7 @@ export default function Progress() {
         <SleepTracker />
       </div>
 
-      <div style={{ padding: "16px" }}>
-        <SleepCard />
-      </div>
+      <SleepCard />
     </main>
   );
 }
