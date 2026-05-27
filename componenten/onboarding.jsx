@@ -68,7 +68,7 @@ function Onboarding({ onComplete }) {
         </div>
 
         <div className="veld">
-          <label>Gewenste wektijd</label>
+          <label>Gewenste slaaptijd</label>
           <input
             type="time"
             value={tijd}
