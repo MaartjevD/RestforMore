@@ -1,9 +1,10 @@
+html,
 body {
   margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
   background: #e5d8c8;
-  body {
-    font-family: "Poppins", sans-serif;
-  }
 }
 
 .app-container {
